@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const pokemonSlice = createSlice({
-    name: 'pokemon',
+export const dragonBallSlice = createSlice({
+    name: 'dragonBall',
     initialState: {
         page: 0,
-        pokemons: [], 
+        dragonBalls: [], 
         isLoading: false,
     },
     reducers: {
-        startLoadingPokemons: (state, /* action */ ) => {
+        startLoadingDragonBalls: (state, /* action */ ) => {
             //! https://react-redux.js.org/tutorials/quick-start
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
@@ -16,14 +16,14 @@ export const pokemonSlice = createSlice({
             // immutable state based off those changes
             state.isLoading = true;
         },
-        setPokemons: ( state, action ) => {
+        setDragonBalls: ( state, action ) => {
             state.isLoading = false;
             state.page = action.payload.page;
-            state.pokemons = action.payload.pokemons;
+            state.dragonBalls = action.payload.dragonBalls;
         }
     }
 });
 
 
 // Action creators are generated for each case reducer function
-export const { startLoadingPokemons, setPokemons } = pokemonSlice.actions;
+export const { startLoadingDragonBalls, setDragonBalls } = dragonBallSlice.actions;

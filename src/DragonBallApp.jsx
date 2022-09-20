@@ -1,25 +1,27 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPokemons } from './store/slices/pokemon';
+import { getDragonBalls } from './store/slices/dragonBall';
 
-export const PokemonApp = () => {
+export const DragonBallApp = () => {
 
     const dispatch = useDispatch();
-    const { isLoading, pokemons = [], page } = useSelector( state => state.pokemons );
+    const { isLoading, dragonBalls = [], page } = useSelector( state => state.dragonBalls );
     
+    //console.log(variable);
+
     useEffect(() => {        
-        dispatch( getPokemons() );        
+        dispatch( getDragonBalls() );        
     }, [])
 
     return (
         <>
-            <h1>PokemonApp</h1>
+            <h1>DragonBallApp</h1>
             <hr/>
             <span>Loading: { isLoading  ? 'True' : 'False' }</span>
 
             <ul>
                 {                     
-                    pokemons.map( ({ name }) => (
+                    dragonBalls.map( ({ name }) => (
                         <li key={ name } >{ name }</li>
                         //console.log(name);
                     ))
@@ -29,7 +31,7 @@ export const PokemonApp = () => {
 
             <button 
                 disabled={ isLoading } 
-                onClick={ () => dispatch( getPokemons(page) ) }
+                onClick={ () => dispatch( getDragonBalls(page) ) }
             >
                 Next
             </button>
