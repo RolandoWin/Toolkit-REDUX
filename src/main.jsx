@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { TodoApp } from './TodoApp';
 import App from './App';
 import './index.css';
 //import { DragonBallApp } from './DragonBallApp';
@@ -12,7 +13,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <Provider store={ store }>
         {/* <App /> */}
-        <PokemonApp />
+        {/* <PokemonApp /> */}
+        <TodoApp />
       </Provider>    
   </React.StrictMode>
 )
